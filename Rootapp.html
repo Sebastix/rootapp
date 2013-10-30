@@ -1,0 +1,1173 @@
+<html>
+    <meta charset="utf-8" />
+    <title>Rootapp demo</title>
+	<!-- JAVASCRIPT -->
+    <script src="lib/air/AIRAliases.js"></script>
+	<script src="lib/air/AIRIntrospector.js" type="text/javascript"></script>
+    <script src="lib/js/jquery.1.6.2-min.js"></script>
+    <script src="lib/js/jquery.easing.1.3.js"></script>
+    <script src="lib/js/jquery.json-2.2.min.js"></script>
+	<script src="lib/air/as3corelib.swf" type="application/x-shockwave-flash"></script>
+	<!-- CSS -->
+	<link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="css/content-general.css" rel="stylesheet" type="text/css" />
+    <link href="css/persona.css" rel="stylesheet" type="text/css" />
+    <link href="css/relations.css" rel="stylesheet" type="text/css" />
+	<style>
+        div.pos{
+            position:absolute;
+            left:8px;
+            width:132px;
+            display:none;
+            min-height:17px;
+            background:url("root/ui/pos-10.png");
+            z-index:0;
+        }
+    </style>
+	<body>
+	    <div id="wrapper">
+	        <div class="up-nav-bar">
+	            <div class="logo">
+	                <img src="images/ui/logo-1.png" />
+	            </div>
+	            <div style="float:left;">
+	                <img src="images/ui/spacer.png" width="133" />
+	            </div>
+	            <div class="profiles">
+	                <div class="wrapper">
+	                    <div class="google-0">
+	                        <img src="images/ui/profile-google.png" />
+	                        <div>
+	                            <img src="images/sebastix-avatar.png" />
+	                            Sebastian Hagens
+	                        </div>
+	                    </div>
+	                    <div class="facebook-1">
+	                        <img src="images/ui/profile-facebook.png" />
+	                        <div>
+	                            <img src="images/sebastian1-avatar.jpg" />
+	                            Sebastian Hagens
+	                            <a href="#" class="close" name="facebook-1">X</a>
+	                        </div>
+	                    </div>
+	                    <div class="linkedin-2">
+	                        <img src="images/ui/profile-linkedin.png" />
+	                        <div>
+	                            <img src="images/sebastix-avatar.png" />
+	                            Sebastian Hagens
+	                        </div>
+	                    </div>
+	                    <div class="hyves-3">
+	                        <img src="images/ui/profile-hyves.png" />
+	                        <div>
+	                            <img src="images/sebastian-avatar.png" />
+	                            Sebastian Hagens
+	                            <a href="#" class="close" name="hyves-2">X</a>
+	                        </div>
+	                    </div>
+	                    <div class="twitter-4">
+	                        <img src="images/ui/profile-twitter.png" />
+	                        <div>
+	                            <img src="images/s-sebastix-icon.jpg" />
+	                            Sebastix
+	                            <a href="#" class="close" name="twitter-3">X</a>
+	                        </div>
+	                    </div>
+	                    <div class="facebook-5">
+	                        <img src="images/ui/profile-facebook.png" />
+	                        <div>
+	                            <img src="images/sebastix-icon.jpg" />
+	                            Sebastix
+	                            <a href="#" class="close" name="facebook-4">X</a>
+	                        </div>
+	                    </div>
+	                    <div class="facebook-6">
+	                        <img src="images/ui/profile-facebook.png" />
+	                        <div>
+	                            <img src="images/hvsbackup-icon.png" />
+	                            HVSbackup
+	                            <a href="#" class="close" name="facebook-5">X</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="add-profile">
+	                <a href="#"></a>
+	            </div>
+	            <div class="add-profiles">
+	                <span class="top"></span>
+	                <span class="inner">
+	                    <img src="images/ui/add-profile-facebook.png" class="facebook" />
+	                    <img src="images/ui/add-profile-hyves.png" class="hyves" />
+	                    <img src="images/ui/add-profile-google.png" class="google" />
+	                    <img src="images/ui/add-profile-delicious.png" class="delicious" />
+	                    <img src="images/ui/add-profile-flickr.png" class="flickr" />
+	                    <img src="images/ui/add-profile-linkedin.png" class="linkedin" />
+	                    <img src="images/ui/add-profile-twitter.png" class="twitter" />
+	                    <img src="images/ui/add-profile-vimeo.png" class="vimeo" />
+	                    <img src="images/ui/add-profile-youtube.png" class="youtube" />
+	                    <!-- to add
+	                    * foursquare
+	                    * mobypicture
+	                    * instagram
+	                     -->
+	                </span>
+	                <span class="bottom"></span>
+	            </div>
+	        </div>
+	        <div id="content-wrapper">
+	            <div class="left-nav-bar">
+	                <div class="item" id="persona">
+	                    <img src="images/ui/leftmenu-persona.png" />
+	                    <span>personal data</span>
+	                </div>
+	                <div class="item" id="vrienden">
+	                    <img src="images/ui/leftmenu-vrienden.png" />
+	                    <span>relations</span>
+	                </div>
+	                <div class="item" id="interesses">
+	                    <img src="images/ui/leftmenu-interesses.png" />
+	                    <span>interests</span>
+	                </div>
+	                <div class="item" id="kennis">
+	                    <img src="images/ui/leftmenu-kennis.png" />
+	                    <span>knowledge</span>
+	                </div>
+	                <div class="item" id="databox">
+	                    <img src="images/ui/leftmenu-databox.png" />
+	                    <span>shared data</span>
+	                </div>
+	                <!--<div class="item" id="privacy">
+	                    <img src="images/ui/leftmenu-privacy.png" />
+	                    <span>privacy</span>
+	                </div>-->
+	            </div>
+	            <div class="content">
+	                <div class="start">
+	                    <img src="images/start-root-1.png" />
+	                </div>
+	                <div class="sub-cats">
+	                    <ul class="persona">
+	                        <li name="profielfotos">profile picture</li>
+	                        <li>first name</li>
+	                        <li>infix</li>
+	                        <li>last name</li>
+	                        <li>nickname</li>
+	                        <li>screen name</li>
+	                        <li>birthday</li>
+	                        <li>birthplace</li>
+	                        <li>nationality</li>
+	                        <li>gender</li>
+	                        <li>first language</li>
+	                        <li>street name</li>
+	                        <li>house number</li>
+	                        <li>postal code</li>
+	                        <li>town/city</li>
+	                        <li>country</li>
+	                        <li>profession</li>
+	                        <li>living situation</li>
+	                        <li>relationship status</li>
+	                        <li>telephone number</li>
+	                        <li>mobile number</li>
+	                        <li>primarily e-mail</li>
+	                        <li name="other-mail">other e-mail</li>
+	                        <li>biography</li>
+	                        <li>about me</li>
+	                        <li>website</li>
+	                        <li>credits balance</li>
+	                        <li>creation date</li>
+	                    </ul>
+	                    <ul class="vrienden">
+	                        <li>family</li>
+	                        <li>close friends</li>
+	                        <li name="vrienden">friends</li>
+	                        <li>colleagues</li>
+	                        <li>organizations</li>
+	                    </ul>
+	                    <ul class="interesses">
+	                        <li>political view</li>
+	                        <li>religion</li>
+	                        <li>idols</li>
+	                        <li>music</li>
+	                        <li>television</li>
+	                        <li name="boeken">books</li>
+	                        <li>movies</li>
+	                        <li>food</li>
+	                        <li>gadgets</li>
+	                        <li name="reizen">travel</li>
+	                        <li>sport</li>
+	                        <li>companies</li>
+	                        <li>locations</li>
+	                        <li>dating</li>
+	                        <li>games</li>
+	                        <li>general interests</li>
+	                        <li>activiteiten</li>
+	                        <li>other</li>
+	                    </ul>
+	                    <ul class="kennis">
+	                        <li>education</li>
+	                        <li>skills</li>
+	                        <li>languages</li>
+	                        <li>employers</li>
+	                        <li>publications</li>
+	                        <li>recommendations</li>
+	                    </ul>
+	                    <ul class="databox">
+	                        <li>photo's</li>
+	                        <li>video's</li>
+	                        <li>documents</li>
+	                        <li>blogposts</li>
+	                        <li>events</li>
+	                        <li>likes</li>
+	                        <li>notes</li>
+	                        <li>favorites</li>
+	                    </ul>
+	                    <div class="pos"></div>
+	                </div>
+	                <div class="inner">
+	                    <div class="profile-content-wrapper">
+	                        <!-- GOOGLE PROFILE BEGIN -->
+	                        <div class="profile-content" id="google-0">
+	                            <form name="persona">
+	                                <div class="profielfotos-wrapper">
+	                                    <img src="images/profielfoto-twitter.png" />
+	                                </div>
+	                                <input type="text" value="Sebastian" label="voornaam" />
+	                                <input type="text" value="empty" label="tussenvoegsel" />
+	                                <input type="text" value="Hagens" label="achternaam" />
+	                                <input type="text" value="Sebastix" label="nickname" />
+	                                <input type="text" value="Sebastian Hagens" label="weergave-naam" />
+	                                <input type="text" value="28-11-1986" label="geboortedatum" />
+	                                <input type="text" value="Breda" label="geboorteplaats" />
+	                                <input type="text" value="Dutch" label="nationaliteit" />
+	                                <input type="text" value="Male" label="geslacht" />
+	                                <input type="text" value="Dutch" label="moedertaal" />
+	                                <input type="text" value="empty" label="straatnaam" />
+	                                <input type="text" value="empty" label="huisnummer" />
+	                                <input type="text" value="empty" label="postcode" />
+	                                <input type="text" value="Hoeven" label="woonplaats" />
+	                                <input type="text" value="Netherlands" label="land" />
+	                                <input type="text" value="Interaction designer" label="profession" />
+	                                <input type="text" value="empty" label="woonsituatie" />
+	                                <input type="text" value="Relation" label="relatie-status" />
+	                                <input type="text" value="empty" label="telefoonnummer" />
+	                                <input type="text" value="+31 641712778" label="mobiele nummer" />
+	                                <input type="text" value="info@sebastix.nl" label="email-primair" />
+	                                <div class="other-mail-wrapper">
+	                                    <input type="text" value="sebastian.hagens@gmail.com" label="emailadressen" />
+	                                    <input type="text" value="info@rootapp.net" label="emailadressen" />
+	                                    <input type="text" value="info@hvsbackup.nl" label="emailadressen" />
+	                                </div>
+	                                <input type="text" value="Ik ontwerp en ontwikkel applicaties waarin de eindgebruiker samen met zijn/haar persoonlijke data centraal staat.
+	
+	Het zijn data, onze digitale sporen, die een steeds grotere rol gaat spelen in ons leven. Met deze informatie krijgen anderen immers een beeld van onze identiteit. De aandacht van anderen is gericht op jou, samen met je digitale sporen die je onbewust en bewust achterlaat: jouw digitale eigendommen met waarde.
+	
+	Data is de nieuwe olie, het nieuwe goud van de toekomst.
+	Juist daarom is het van belang dat iedereen controle en inzicht krijgt in zijn persoonlijke data. Dit belang vertaalt zich vrij eenvoudig in persoonlijke waarden die elk individu kan benutten voor eigen behoeftes en aanbod naar derden toe.
+	
+	www.sebastix.nl
+	www.hvsbackup.nl
+	www.myroot.me
+	www.rootapp.net" label="biografie" />
+	                                <input type="text" value="Young entrepreneur" label="over-mij" />
+	                                <input type="text" value="http://www.sebastix.nl" label="website" />
+	                                <input type="text" value="empty" label="saldotegoed" />
+	                                <input type="text" value="18 January 2007" label="creatie-datum" />
+	                            </form>
+	                            <form name="vrienden">
+	                                <input type="text" value="empty" label="familie" />
+	                                <input type="text" value="empty" label="close-friends" />
+	                                <div class="vrienden-wrapper" label="vrienden">
+	                                    <input type="text" value="empty" label="vrienden" />
+	                                    <!-- GOOGLE relations data -->
+	
+	                                </div>
+	                                <input type="text" value="empty" label="collega's" />
+	                                <input type="text" value="empty" label="organisaties" />
+	                            </form>
+	                            <form name="interesses">
+	                                <input type="text" value="empty" label="politieke voorkeur" />
+	                                <input type="text" value="empty" label="religie" />
+	                                <input type="text" value="empty" label="idolen" />
+	                                <input type="text" value="empty" label="muziek" />
+	                                <input type="text" value="empty" label="televisie" />
+	                                <div class="boeken-wrapper">
+	                                    <input type="text" value="empty" label="boeken" />
+	                                </div>
+	                                <input type="text" value="empty" label="films" />
+	                                <input type="text" value="empty" label="eten" />
+	                                <input type="text" value="empty" label="gadgets" />
+	                                <div class="reizen-wrapper">
+	                                    <input type="text" value="empty" label="reizen" />
+	                                </div>
+	                                <input type="text" value="empty" label="sport" />
+	                                <input type="text" value="empty" label="bedrijven" />
+	                                <input type="text" value="empty" label="locaties" />
+	                                <input type="text" value="empty" label="dating" />
+	                                <input type="text" value="empty" label="games" />
+	                                <input type="text" value="empty" label="algemene interesses" />
+	                                <input type="text" value="empty" label="activiteiten" />
+	                                <input type="text" value="empty" label="overige" />
+	                            </form>
+	                            <form name="kennis">
+	                                <input type="text" value="empty" label="opleidingen" />
+	                                <input type="text" value="empty" label="vaardigheden" />
+	                                <input type="text" value="empty" label="talen" />
+	                                <input type="text" value="empty" label="werkgevers" />
+	                                <input type="text" value="empty" label="publicaties" />
+	                                <input type="text" value="empty" label="aanbevelingen" />
+	                            </form>
+	                            <form name="databox">
+	                                <input type="text" value="empty" label="foto's" />
+	                                <input type="text" value="empty" label="video's" />
+	                                <input type="text" value="empty" label="tekstdocumenten" />
+	                                <input type="text" value="empty" label="blogs" />
+	                                <input type="text" value="empty" label="evenementen" />
+	                                <input type="text" value="empty" label="likes" />
+	                                <input type="text" value="empty" label="notities" />
+	                                <input type="text" value="empty" label="favorieten" />
+	                            </form>
+	                        </div>
+	                        <!-- FB PROFILE BEGIN -->
+	                        <div class="profile-content" id="facebook-1">
+	                            <form name="persona">
+	                                <div class="profielfotos-wrapper">
+	                                    <img src="images/profielfoto1-facebook.jpg" />
+	                                </div>
+	                                <input type="text" value="Sebastian" label="voornaam" />
+	                                <input type="text" value="empty" label="tussenvoegsel" />
+	                                <input type="text" value="Hagens" label="achternaam" />
+	                                <input type="text" value="x" label="nickname" />
+	                                <input type="text" value="Sebastian Hagens" label="weergave-naam" />
+	                                <input type="text" value="28 November 1986" label="geboortedatum" />
+	                                <input type="text" value="Breda" label="geboorteplaats" />
+	                                <input type="text" value="Dutch" label="nationaliteit" />
+	                                <input type="text" value="Male" label="geslacht" />
+	                                <input type="text" value="Dutch" label="moedertaal" />
+	                                <input type="text" value="empty" label="straatnaam" />
+	                                <input type="text" value="empty" label="huisnummer" />
+	                                <input type="text" value="empty" label="postcode" />
+	                                <input type="text" value="Hoeven" label="woonplaats" />
+	                                <input type="text" value="Nederland" label="land" />
+	                                <input type="text" value="Creative director" label="profession" />
+	                                <input type="text" value="At my parents' home" label="woonsituatie" />
+	                                <input type="text" value="In a relationship" label="relatie-status" />
+	                                <input type="text" value="x" label="telefoonnummer" />
+	                                <input type="text" value="empty" label="mobiele nummer" />
+	                                <input type="text" value="sebastian.hagens@gmail.com" label="email-primair" />
+	                                <div class="other-mail-wrapper">
+	                                    <input type="text" value="x" label="emailadressen" />
+	                                </div>
+	                                <input type="text" value="empty" label="biografie" />
+	                                <input type="text" value="Young internet entrepreneur | Sebastix | interaction designer | game-changer | founder HVSbackup  Mac OSX | Honda" label="over-mij" />
+	                                <input type="text" value="http://www.sebastix.nl" label="website" />
+	                                <input type="text" value="empty" label="saldotegoed" />
+	                                <input type="text" value="23 March 2008" label="creatie-datum" />
+	                            </form>
+	                            <form name="vrienden">
+	                                <input type="text" value="empty" label="familie" />
+	                                <input type="text" value="empty" label="close-friends" />
+	                                <div class="vrienden-wrapper" label="vrienden">
+	                                    <script>
+	                                    	/* native JSON data controller */
+											var facebookJSONfile = air.File.applicationDirectory.resolvePath('socialdata/facebookfriends.js');
+											if (facebookJSONfile.exists) {
+												var fileStream = new air.FileStream();
+												var result = new air.ByteArray();
+												fileStream.open(facebookJSONfile,air.FileMode.READ);
+												fileStream.readBytes(result);
+												fileStream.close();
+												var FacebookFriends = eval("(" + result + ')');
+												
+												for(var i=0; i<FacebookFriends.length; i++){
+													air.trace(i);
+													air.trace(FacebookFriends[i].uid);
+	                                                jQuery('<div />').attr('id', i).attr('class', 'person').appendTo('#facebook-1 div.vrienden-wrapper');
+	                                                jQuery("<img/>").attr("src", FacebookFriends[i].pic_square).attr("title", FacebookFriends[i].name).appendTo("#facebook-1 div.vrienden-wrapper div#"+i);
+	                                                jQuery('<div>'+FacebookFriends[i].name+'</div>').appendTo('#facebook-1 div.vrienden-wrapper div#'+i);
+	                                              if ( i == 14 ) {
+	                                                  jQuery('#facebook-1 	div.vrienden-wrapper').append('<div class="more"><img src="images/ui/more.png" /> View more friends (204)</div>');
+	                                                  break;
+	                                                }
+	                                            }	                                            	                                            									
+											}
+	                                    </script>
+	                                </div>
+	                                <input type="text" value="empty" label="collega's" />
+	                                <input type="text" value="empty" label="organisaties" />
+	                            </form>
+	                            <form name="interesses">
+	                                <input type="text" value="empty" label="politieke voorkeur" />
+	                                <input type="text" value="Catholic" label="religie" />
+	                                <input type="text" value="Nova Spivack" label="idolen" />
+	                                <input type="text" value="Jazz" label="muziek" />
+	                                <input type="text" value="Tegenlicht" label="televisie" />
+	                                <div class="boeken-wrapper">
+	                                    <input type="text" value="Blue Ocean strategy" label="boeken" />
+	                                    <input type="text" value="Cognitive Surplus" label="boeken" />
+	                                    <div class="more">
+	                                          <img src="images/ui/more.png" /> View more (13)
+	                                    </div>
+	                                </div>
+	                                <input type="text" value="The Matrix" label="films" />
+	                                <input type="text" value="Mexican" label="eten" />
+	                                <input type="text" value="Arduino" label="gadgets" />
+	                                <div class="reizen-wrapper">
+	                                    <input type="text" value="Roadtrip France" label="reizen" />
+	                                </div>
+	                                <input type="text" value="Cycling" label="sport" />
+	                                <input type="text" value="Sebastix.nl" label="bedrijven" />
+	                                <input type="text" value="Blushuis" label="locaties" />
+	                                <input type="text" value="No" label="dating" />
+	                                <input type="text" value="Command & Conquer Red Alert 2" label="games" />
+	                                <input type="text" value="HTML5" label="algemene interesses" />
+	                                <input type="text" value="empty" label="activiteiten" />
+	                                <input type="text" value="x" label="overige" />
+	                            </form>
+	                            <form name="kennis">
+	                                <input type="text" value="Artschool St.Joost" label="opleidingen" />
+	                                <input type="text" value="empty" label="vaardigheden" />
+	                                <input type="text" value="English +++" label="talen" />
+	                                <input type="text" value="Sebastix.nl" label="werkgevers" />
+	                                <input type="text" value="A digital lifeline" label="publicaties" />
+	                                <input type="text" value="empty" label="aanbevelingen" />
+	                            </form>
+	                            <form name="databox">
+	                                <input type="text" value="empty" label="foto's" />
+	                                <input type="text" value="empty" label="video's" />
+	                                <input type="text" value="empty" label="tekstdocumenten" />
+	                                <input type="text" value="empty" label="blogs" />
+	                                <input type="text" value="empty" label="evenementen" />
+	                                <input type="text" value="empty" label="likes" />
+	                                <input type="text" value="empty" label="notities" />
+	                                <input type="text" value="empty" label="favorieten" />
+	                            </form>
+	                        </div>
+	                        <!-- LINKEDIN PROFILE BEGIN -->
+	                        <div class="profile-content" id="linkedin-2">
+	                            <form name="persona">
+	                                <div class="profielfotos-wrapper">
+	                                    <img src="images/profielfoto-twitter.png" />
+	                                </div>
+	                                <input type="text" value="Sebastian" label="voornaam" />
+	                                <input type="text" value="empty" label="tussenvoegsel" />
+	                                <input type="text" value="Hagens" label="achternaam" />
+	                                <input type="text" value="x" label="nickname" />
+	                                <input type="text" value="Sebastian Hagens" label="weergave-naam" />
+	                                <input type="text" value="empty" label="geboortedatum" />
+	                                <input type="text" value="Breda" label="geboorteplaats" />
+	                                <input type="text" value="Dutch" label="nationaliteit" />
+	                                <input type="text" value="Male" label="geslacht" />
+	                                <input type="text" value="Dutch" label="moedertaal" />
+	                                <input type="text" value="Sportlaan" label="straatnaam" />
+	                                <input type="text" value="138" label="huisnummer" />
+	                                <input type="text" value="2419 JF" label="postcode" />
+	                                <input type="text" value="Hoeven" label="woonplaats" />
+	                                <input type="text" value="Netherlands" label="land" />
+	                                <input type="text" value="Interaction designer" label="profession" />
+	                                <input type="text" value="empty" label="woonsituatie" />
+	                                <input type="text" value="empty" label="relatie-status" />
+	                                <input type="text" value="empty" label="telefoonnummer" />
+	                                <input type="text" value="+31 641712778" label="mobiele nummer" />
+	                                <input type="text" value="info@sebastix.nl" label="email-primair" />
+	                                <div class="other-mail-wrapper">
+	                                    <input type="text" value="empty" label="emailadressen" />
+	                                </div>
+	                                <input type="text" value="empty" label="biografie" />
+	                                <input type="text" value="empty" label="over-mij" />
+	                                <input type="text" value="http://www.sebastix.nl" label="website" />
+	                                <input type="text" value="empty" label="saldotegoed" />
+	                                <input type="text" value="18 January 2007" label="creatie-datum" />
+	                            </form>
+	                            <form name="vrienden">
+	                                <input type="text" value="empty" label="familie" />
+	                                <input type="text" value="empty" label="close-friends" />
+	                                <div class="vrienden-wrapper" label="vrienden">
+	                                    <input type="text" value="empty" label="vrienden" />
+	                                    <!-- LINKEDIN relations data -->
+	
+	                                </div>
+	                                <input type="text" value="empty" label="collega's" />
+	                                <input type="text" value="empty" label="organisaties" />
+	                            </form>
+	                            <form name="interesses">
+	                                <input type="text" value="empty" label="politieke voorkeur" />
+	                                <input type="text" value="empty" label="religie" />
+	                                <input type="text" value="empty" label="idolen" />
+	                                <input type="text" value="empty" label="muziek" />
+	                                <input type="text" value="empty" label="televisie" />
+	                                <div class="boeken-wrapper">
+	                                    <input type="text" value="empty" label="boeken" />
+	                                </div>
+	                                <input type="text" value="empty" label="films" />
+	                                <input type="text" value="empty" label="eten" />
+	                                <input type="text" value="empty" label="gadgets" />
+	                                <div class="reizen-wrapper">
+	                                    <input type="text" value="empty" label="reizen" />
+	                                </div>
+	                                <input type="text" value="empty" label="sport" />
+	                                <input type="text" value="empty" label="bedrijven" />
+	                                <input type="text" value="empty" label="locaties" />
+	                                <input type="text" value="empty" label="dating" />
+	                                <input type="text" value="empty" label="games" />
+	                                <input type="text" value="empty" label="algemene interesses" />
+	                                <input type="text" value="empty" label="activiteiten" />
+	                                <input type="text" value="empty" label="overige" />
+	                            </form>
+	                            <form name="kennis">
+	                                <input type="text" value="empty" label="opleidingen" />
+	                                <input type="text" value="empty" label="vaardigheden" />
+	                                <input type="text" value="empty" label="talen" />
+	                                <input type="text" value="empty" label="werkgevers" />
+	                                <input type="text" value="empty" label="publicaties" />
+	                                <input type="text" value="empty" label="aanbevelingen" />
+	                            </form>
+	                            <form name="databox">
+	                                <input type="text" value="empty" label="foto's" />
+	                                <input type="text" value="empty" label="video's" />
+	                                <input type="text" value="empty" label="tekstdocumenten" />
+	                                <input type="text" value="empty" label="blogs" />
+	                                <input type="text" value="empty" label="evenementen" />
+	                                <input type="text" value="empty" label="likes" />
+	                                <input type="text" value="empty" label="notities" />
+	                                <input type="text" value="empty" label="favorieten" />
+	                            </form>
+	                        </div>
+	                        <!-- HYVES PROFILE BEGIN -->
+	                        <div class="profile-content" id="hyves-3">
+	                            <form name="persona">
+	                                <div class="profielfotos-wrapper">
+	                                    <img src="images/profielfoto-hyves.png" />
+	                                </div>
+	                                <input type="text" value="Sebastian" label="voornaam" />
+	                                <input type="text" value="" label = "tussenvoegsel" />
+	                                <input type="text" value="Hagens" label="achternaam" />
+	                                <input type="text" value="Sebastix" label="nickname" />
+	                                <input type="text" value="Sebastix" label="weergave-naam" />
+	                                <input type="text" value="28 November 1986" label="geboortedatum" />
+	                                <input type="text" value="x" label="geboorteplaats" />
+	                                <input type="text" value="empty" label="nationaliteit" />
+	                                <input type="text" value="Male" label="geslacht" />
+	                                <input type="text" value="x" label="moedertaal" />
+	                                <input type="text" value="Sportlaan" label="straatnaam" />
+	                                <input type="text" value="138" label="huisnummer" />
+	                                <input type="text" value="2419 JF" label="postcode" />
+	                                <input type="text" value="Hoeven" label="woonplaats" />
+	                                <input type="text" value="Netherlands" label="land" />
+	                                <input type="text" value="x" label="profession" />
+	                                <input type="text" value="empty" label="woonsituatie" />
+	                                <input type="text" value="In a relationship" label="relatie-status" />
+	                                <input type="text" value="x" label="telefoonnummer" />
+	                                <input type="text" value="empty" label="mobiele nummer" />
+	                                <input type="text" value="sebastian.hagens@gmail.com" label="email-primair" />
+	                                <div class="other-mail-wrapper">
+	                                    <input type="text" value="x" label="emailadressen" />
+	                                </div>
+	                                <input type="text" value="x" label="biografie" />
+	                                <input type="text" value="empty" label="over-mij" />
+	                                <input type="text" value="http://www.sebastix.nl" label="website" />
+	                                <input type="text" value="&euro; 13,23" label="saldotegoed" />
+	                                <input type="text" value="6 October 2006" label="creatie-datum" />
+	                            </form>
+	                            <form name="vrienden">
+	                                <input type="text" value="x" label="familie" />
+	                                <input type="text" value="empty" label="close-friends" />
+	                                <div class="vrienden-wrapper" label="vrienden">
+	                                    <img src="images/vrienden-hyves-1.png" />
+	                                    <div class="more">
+	                                          <img src="images/ui/more.png" /> View more (234)
+	                                    </div>
+	                                </div>
+	                                <input type="text" value="x" label="collega's" />
+	                                <input type="text" value="empty" label="organisaties" />
+	                            </form>
+	                            <form name="interesses">
+	                                <input type="text" value="x" label="politieke voorkeur" />
+	                                <input type="text" value="Catholic" label="religie" />
+	                                <input type="text" value="empty" label="idolen" />
+	                                <input type="text" value="empty" label="muziek" />
+	                                <input type="text" value="empty" label="televisie" />
+	                                <div class="boeken-wrapper">
+	                                    <input type="text" value="Kuddegedrag" label="boeken" />
+	                                    <input type="text" value="The four hour workweek" label="boeken" />
+	                                    <input type="text" value="Getting Real" label="boeken" />
+	                                </div>
+	                                <input type="text" value="empty" label="films" />
+	                                <input type="text" value="empty" label="eten" />
+	                                <input type="text" value="empty" label="gadgets" />
+	                                <div class="reizen-wrapper">
+	                                    <input type="text" value="Marmaris 2005" label="reizen" />
+	                                    <input type="text" value="Siofok 2006" label="reizen" />
+	                                    <input type="text" value="Chersonissos 2007" label="reizen" />
+	                                    <input type="text" value="Sunny Beach 2008" label="reizen" />
+	                                    <input type="text" value="Roadtrip Europe 2009" label="reizen" />
+	                                </div>
+	                                <input type="text" value="Cycling" label="sport" />
+	                                <input type="text" value="PocketPartner BV" label="bedrijven" />
+	                                <input type="text" value="empty" label="locaties" />
+	                                <input type="text" value="x" label="dating" />
+	                                <input type="text" value="Command & Conquer" label="games" />
+	                                <input type="text" value="empty" label="algemene interesses" />
+	                                <input type="text" value="x" label="activiteiten" />
+	                                <input type="text" value="Civic Club Holland" label="overige" />
+	                            </form>
+	                            <form name="kennis">
+	                                <input type="text" value="empty" label="opleidingen" />
+	                                <input type="text" value="empty" label="vaardigheden" />
+	                                <input type="text" value="empty" label="talen" />
+	                                <input type="text" value="empty" label="werkgevers" />
+	                                <input type="text" value="empty" label="publicaties" />
+	                                <input type="text" value="empty" label="aanbevelingen" />
+	                            </form>
+	                            <form name="databox">
+	                                <input type="text" value="empty" label="foto's" />
+	                                <input type="text" value="empty" label="video's" />
+	                                <input type="text" value="empty" label="tekstdocumenten" />
+	                                <input type="text" value="empty" label="blogs" />
+	                                <input type="text" value="empty" label="evenementen" />
+	                                <input type="text" value="empty" label="likes" />
+	                                <input type="text" value="empty" label="notities" />
+	                                <input type="text" value="empty" label="favorieten" />
+	                            </form>
+	                        </div>
+	                        <!-- TWITTER PROFILE BEGIN -->
+	                        <div class="profile-content" id="twitter-4">
+	                            <form name="persona">
+	                                <div class="profielfotos-wrapper">
+	                                    <img src="images/profielfoto-s-sebastix.jpg" />
+	                                </div>
+	                                <input type="text" value="Sebastian" label="voornaam" />
+	                                <input type="text" value="" label = "tussenvoegsel" />
+	                                <input type="text" value="Hagens" label="achternaam" />
+	                                <input type="text" value="x" label="nickname" />
+	                                <input type="text" value="Sebastix" label="weergave-naam" />
+	                                <input type="text" value="x" label="geboortedatum" />
+	                                <input type="text" value="x" label="geboorteplaats" />
+	                                <input type="text" value="x" label="nationaliteit" />
+	                                <input type="text" value="x" label="geslacht" />
+	                                <input type="text" value="x" label="moedertaal" />
+	                                <input type="text" value="x" label="straatnaam" />
+	                                <input type="text" value="x" label="huisnummer" />
+	                                <input type="text" value="x" label="postcode" />
+	                                <input type="text" value="Hoeven" label="woonplaats" />
+	                                <input type="text" value="Netherlands" label="land" />
+	                                <input type="text" value="x" label="profession" />
+	                                <input type="text" value="x" label="woonsituatie" />
+	                                <input type="text" value="x" label="relatie-status" />
+	                                <input type="text" value="x" label="telefoonnummer" />
+	                                <input type="text" value="empty" label="mobiele nummer" />
+	                                <input type="text" value="info@sebastix.nl" label="email-primair" />
+	                                <div class="other-mail-wrapper">
+	                                    <input type="text" value="x" label="emailadressen" />
+	                                </div>
+	                                <input type="text" value="x" label="biografie" />
+	                                <input type="text" value="Young internet entrepreneur" label="over-mij" />
+	                                <input type="text" value="http://www.sebastix.nl" label="website" />
+	                                <input type="text" value="x" label="saldotegoed" />
+	                                <input type="text" value="15 November 2009" label="creatie-datum" />
+	                            </form>
+	                            <form name="vrienden">
+	                                <input type="text" value="x" label="familie" />
+	                                <input type="text" value="empty" label="close-friends" />
+	                                <div class="vrienden-wrapper" label="vrienden">
+	                                     <input type="text" value="empty" label="vrienden" />
+	                                </div>
+	                                <input type="text" value="x" label="collega's" />
+	                                <input type="text" value="empty" label="organisaties" />
+	                            </form>
+	                            <form name="interesses">
+	                                <input type="text" value="empty" label="politieke voorkeur" />
+	                                <input type="text" value="empty" label="religie" />
+	                                <input type="text" value="empty" label="idolen" />
+	                                <input type="text" value="empty" label="muziek" />
+	                                <input type="text" value="empty" label="televisie" />
+	                                <div class="boeken-wrapper">
+	                                    <input type="text" value="empty" label="boeken" />
+	                                </div>
+	                                <input type="text" value="empty" label="films" />
+	                                <input type="text" value="empty" label="eten" />
+	                                <input type="text" value="empty" label="gadgets" />
+	                                <div class="reizen-wrapper">
+	                                    <input type="text" value="empty" label="reizen" />
+	                                </div>
+	                                <input type="text" value="empty" label="sport" />
+	                                <input type="text" value="empty" label="bedrijven" />
+	                                <input type="text" value="empty" label="locaties" />
+	                                <input type="text" value="empty" label="dating" />
+	                                <input type="text" value="empty" label="games" />
+	                                <input type="text" value="empty" label="algemene interesses" />
+	                                <input type="text" value="empty" label="activiteiten" />
+	                                <input type="text" value="empty" label="overige" />
+	                            </form>
+	                            <form name="kennis">
+	                                <input type="text" value="empty" label="opleidingen" />
+	                                <input type="text" value="empty" label="vaardigheden" />
+	                                <input type="text" value="empty" label="talen" />
+	                                <input type="text" value="empty" label="werkgevers" />
+	                                <input type="text" value="empty" label="publicaties" />
+	                                <input type="text" value="empty" label="aanbevelingen" />
+	                            </form>
+	                            <form name="databox">
+	                                <input type="text" value="empty" label="foto's" />
+	                                <input type="text" value="empty" label="video's" />
+	                                <input type="text" value="empty" label="tekstdocumenten" />
+	                                <input type="text" value="empty" label="blogs" />
+	                                <input type="text" value="empty" label="evenementen" />
+	                                <input type="text" value="empty" label="likes" />
+	                                <input type="text" value="empty" label="notities" />
+	                                <input type="text" value="empty" label="favorieten" />
+	                            </form>
+	                        </div>
+	                        <!-- FB SEBASTIX PROFILE BEGIN -->
+	                        <div class="profile-content" id="facebook-5">
+	                            <form name="persona">
+	                                <div class="profielfotos-wrapper">
+	                                    <img src="images/profielfoto-sebastix.jpg" />
+	                                </div>
+	                                <input type="text" value="x" label="voornaam" />
+	                                <input type="text" value="x" label = "tussenvoegsel" />
+	                                <input type="text" value="x" label="achternaam" />
+	                                <input type="text" value="x" label="nickname" />
+	                                <input type="text" value="Sebastix" label="weergave-naam" />
+	                                <input type="text" value="x" label="geboortedatum" />
+	                                <input type="text" value="x" label="geboorteplaats" />
+	                                <input type="text" value="x" label="nationaliteit" />
+	                                <input type="text" value="x" label="geslacht" />
+	                                <input type="text" value="x" label="moedertaal" />
+	                                <input type="text" value="Reduitlaan" label="straatnaam" />
+	                                <input type="text" value="33" label="huisnummer" />
+	                                <input type="text" value="3800 HG" label="postcode" />
+	                                <input type="text" value="Breda" label="woonplaats" />
+	                                <input type="text" value="Netherlands" label="land" />
+	                                <input type="text" value="x" label="profession" />
+	                                <input type="text" value="x" label="woonsituatie" />
+	                                <input type="text" value="x" label="relatie-status" />
+	                                <input type="text" value="x" label="telefoonnummer" />
+	                                <input type="text" value="empty" label="mobiele nummer" />
+	                                <input type="text" value="info@sebastix.nl" label="email-primair" />
+	                                <div class="other-mail-wrapper">
+	                                    <input type="text" value="x" label="emailadressen" />
+	                                </div>
+	                                <input type="text" value="x" label="biografie" />
+	                                <input type="text" value="Interaction design" label="over-mij" />
+	                                <input type="text" value="http://www.sebastix.nl" label="website" />
+	                                <input type="text" value="x" label="saldotegoed" />
+	                                <input type="text" value="18 July 2010" label="creatie-datum" />
+	                            </form>
+	                            <form name="vrienden">
+	                                <input type="text" value="x" label="familie" />
+	                                <input type="text" value="empty" label="close-friends" />
+	                                <div class="vrienden-wrapper" label="vrienden">
+	                                     <input type="text" value="empty" label="vrienden" />
+	                                </div>
+	                                <input type="text" value="x" label="collega's" />
+	                                <input type="text" value="empty" label="organisaties" />
+	                            </form>
+	                            <form name="interesses">
+	                                <input type="text" value="empty" label="politieke voorkeur" />
+	                                <input type="text" value="empty" label="religie" />
+	                                <input type="text" value="empty" label="idolen" />
+	                                <input type="text" value="empty" label="muziek" />
+	                                <input type="text" value="empty" label="televisie" />
+	                                <div class="boeken-wrapper">
+	                                    <input type="text" value="empty" label="boeken" />
+	                                </div>
+	                                <input type="text" value="empty" label="films" />
+	                                <input type="text" value="empty" label="eten" />
+	                                <input type="text" value="empty" label="gadgets" />
+	                                <div class="reizen-wrapper">
+	                                    <input type="text" value="empty" label="reizen" />
+	                                </div>
+	                                <input type="text" value="empty" label="sport" />
+	                                <input type="text" value="empty" label="bedrijven" />
+	                                <input type="text" value="empty" label="locaties" />
+	                                <input type="text" value="empty" label="dating" />
+	                                <input type="text" value="empty" label="games" />
+	                                <input type="text" value="empty" label="algemene interesses" />
+	                                <input type="text" value="empty" label="activiteiten" />
+	                                <input type="text" value="empty" label="overige" />
+	                            </form>
+	                            <form name="kennis">
+	                                <input type="text" value="empty" label="opleidingen" />
+	                                <input type="text" value="empty" label="vaardigheden" />
+	                                <input type="text" value="empty" label="talen" />
+	                                <input type="text" value="empty" label="werkgevers" />
+	                                <input type="text" value="empty" label="publicaties" />
+	                                <input type="text" value="empty" label="aanbevelingen" />
+	                            </form>
+	                            <form name="databox">
+	                                <input type="text" value="empty" label="foto's" />
+	                                <input type="text" value="empty" label="video's" />
+	                                <input type="text" value="empty" label="tekstdocumenten" />
+	                                <input type="text" value="empty" label="blogs" />
+	                                <input type="text" value="empty" label="evenementen" />
+	                                <input type="text" value="empty" label="likes" />
+	                                <input type="text" value="empty" label="notities" />
+	                                <input type="text" value="empty" label="favorieten" />
+	                            </form>
+	                        </div>
+	                        <!-- FB HVSBACKUP PROFILE BEGIN -->
+	                        <div class="profile-content" id="facebook-6">
+	                            <form name="persona">
+	                                <div class="profielfotos-wrapper">
+	                                    <img src="images/hvsbackup-profielfoto.png" />
+	                                </div>
+	                                <input type="text" value="x" label="voornaam" />
+	                                <input type="text" value="x" label = "tussenvoegsel" />
+	                                <input type="text" value="x" label="achternaam" />
+	                                <input type="text" value="x" label="nickname" />
+	                                <input type="text" value="HVSbackup" label="weergave-naam" />
+	                                <input type="text" value="x" label="geboortedatum" />
+	                                <input type="text" value="x" label="geboorteplaats" />
+	                                <input type="text" value="x" label="nationaliteit" />
+	                                <input type="text" value="x" label="geslacht" />
+	                                <input type="text" value="x" label="moedertaal" />
+	                                <input type="text" value="x" label="straatnaam" />
+	                                <input type="text" value="x" label="huisnummer" />
+	                                <input type="text" value="x" label="postcode" />
+	                                <input type="text" value="empty" label="woonplaats" />
+	                                <input type="text" value="Netherlands" label="land" />
+	                                <input type="text" value="x" label="profession" />
+	                                <input type="text" value="x" label="woonsituatie" />
+	                                <input type="text" value="x" label="relatie-status" />
+	                                <input type="text" value="x" label="telefoonnummer" />
+	                                <input type="text" value="empty" label="mobiele nummer" />
+	                                <input type="text" value="info@hvsbackup.nl" label="email-primair" />
+	                                <div class="other-mail-wrapper">
+	                                    <input type="text" value="x" label="emailadressen" />
+	                                </div>
+	                                <input type="text" value="x" label="biografie" />
+	                                <input type="text" value="Download and save your Hyves data" label="over-mij" />
+	                                <input type="text" value="http://www.hvsbackup.nl" label="website" />
+	                                <input type="text" value="x" label="saldotegoed" />
+	                                <input type="text" value="29 October 2010" label="creatie-datum" />
+	                            </form>
+	                            <form name="vrienden">
+	                                <input type="text" value="x" label="familie" />
+	                                <input type="text" value="empty" label="close-friends" />
+	                                <div class="vrienden-wrapper" label="vrienden">
+	                                     <input type="text" value="empty" label="vrienden" />
+	                                </div>
+	                                <input type="text" value="x" label="collega's" />
+	                                <input type="text" value="empty" label="organisaties" />
+	                            </form>
+	                            <form name="interesses">
+	                                <input type="text" value="empty" label="politieke voorkeur" />
+	                                <input type="text" value="empty" label="religie" />
+	                                <input type="text" value="empty" label="idolen" />
+	                                <input type="text" value="empty" label="muziek" />
+	                                <input type="text" value="empty" label="televisie" />
+	                                <div class="boeken-wrapper">
+	                                    <input type="text" value="empty" label="boeken" />
+	                                </div>
+	                                <input type="text" value="empty" label="films" />
+	                                <input type="text" value="empty" label="eten" />
+	                                <input type="text" value="empty" label="gadgets" />
+	                                <div class="reizen-wrapper">
+	                                    <input type="text" value="empty" label="reizen" />
+	                                </div>
+	                                <input type="text" value="empty" label="sport" />
+	                                <input type="text" value="empty" label="bedrijven" />
+	                                <input type="text" value="empty" label="locaties" />
+	                                <input type="text" value="empty" label="dating" />
+	                                <input type="text" value="empty" label="games" />
+	                                <input type="text" value="empty" label="algemene interesses" />
+	                                <input type="text" value="empty" label="activiteiten" />
+	                                <input type="text" value="empty" label="overige" />
+	                            </form>
+	                            <form name="kennis">
+	                                <input type="text" value="empty" label="opleidingen" />
+	                                <input type="text" value="empty" label="vaardigheden" />
+	                                <input type="text" value="empty" label="talen" />
+	                                <input type="text" value="empty" label="werkgevers" />
+	                                <input type="text" value="empty" label="publicaties" />
+	                                <input type="text" value="empty" label="aanbevelingen" />
+	                            </form>
+	                            <form name="databox">
+	                                <input type="text" value="empty" label="foto's" />
+	                                <input type="text" value="empty" label="video's" />
+	                                <input type="text" value="empty" label="tekstdocumenten" />
+	                                <input type="text" value="empty" label="blogs" />
+	                                <input type="text" value="empty" label="evenementen" />
+	                                <input type="text" value="empty" label="likes" />
+	                                <input type="text" value="empty" label="notities" />
+	                                <input type="text" value="empty" label="favorieten" />
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		<script>
+	        jQuery(document).ready(function(){
+				
+				air.Introspector.Console.log();
+				
+	            var focusItem = '';
+	
+	            jQuery('ul.persona, ul.vrienden, ul.interesses, ul.kennis, ul.databox').hide();
+	            // init size layout
+	            setSizes();
+	
+	            jQuery('div.profile-content').find('input').each(function(){
+	                if(jQuery(this).val() == 'empty'){
+	                    jQuery(this).css('color','#CCCCCC');
+	                }
+	                if(jQuery(this).val() == 'x'){
+	                    jQuery(this).css({
+	                        'color': '#CCCCCC',
+	                        'background': '#e5e5e5',
+	                        'text-align': 'center',
+	                        'border': '1px solid #e5e5e5'
+	                    });
+	                }
+	            });
+	
+	            // document resize event
+	            jQuery(window).resize(function(){
+	                setSizes();
+	            });
+	            function setSizes(){
+	                var DOMwidth = jQuery(window).width();
+	                var DOMheight = jQuery(window).height();
+	                // set height of left nav bar
+	                jQuery('div.left-nav-bar, div.content').css({
+	                    height: DOMheight-55+'px'
+	                });
+	                // set width of the content
+	                jQuery('div.content').css({
+	                    width: DOMwidth-116+'px'
+	                });
+	                //set size of the div.inner (handles the scrollbars)
+	                jQuery('div.content div.inner').css({
+	                    height: jQuery(window).height()-55+'px',
+	                    width: jQuery(window).width()-jQuery('div.left-nav-bar').width()-jQuery('div.sub-cats').width()+'px'
+	                });
+	                // how many columns do we have in the div.profile-content-wrapper element?
+	                var columnCount = jQuery('div.inner div.profile-content-wrapper div.profile-content').size();
+	                var columnWidth = jQuery('.up-nav-bar .profiles .wrapper div').width();
+	                // set size of the wrapper of the columns
+	                jQuery('.content .inner .profile-content-wrapper').css({
+	                    width: columnCount*columnWidth+'px'
+	                });
+	                // we do the same with the header profile header wrapper
+	                jQuery('div.up-nav-bar div.profiles').css({
+	                    width: 300+columnCount*columnWidth+'px'
+	                });
+	            }
+	            jQuery('div.inner').scroll(function(){
+	                var posX = jQuery(this).scrollLeft();
+	                var posY = jQuery(this).scrollTop();
+	                jQuery('div.up-nav-bar div.profiles div.wrapper').css({left: -posX});
+	                jQuery('div.sub-cats').css({marginTop: -posY+45});
+	            });
+	
+	            // click handlers
+	            jQuery('div.logo').click(function(){
+	                jQuery('ul.persona, ul.vrienden, ul.interesses, ul.kennis, ul.databox').hide();
+	                jQuery('div.sub-cats, div.inner, div.profiles, div.add-profile').hide();
+	                jQuery('div.content div.start').show();
+	            });
+	            jQuery('.left-nav-bar .item').click(function(){
+	                jQuery(".active").removeClass("active");
+	                jQuery(this).addClass('active');
+	                var what = jQuery(this).attr('id');
+	                focusItem = what;
+	                showContent(what);
+	            });
+	            // show profiles which can be added
+	            jQuery('.up-nav-bar div.add-profile a').click(function(){
+	                jQuery('.up-nav-bar div.add-profiles').toggle();
+	            });
+	            // add column
+	            jQuery('.up-nav-bar div.add-profiles img').click(function(){
+	                // what type social media of profile are you adding?
+	                // find the type
+	                var socialSource = jQuery(this).attr('class');
+	                // count the number of columns
+	                var columnCount = jQuery('div.inner div.profile-content-wrapper div.profile-content').size();
+	
+	                var headerHTML = '';
+	                headerHTML += '<div class="'+socialSource+'-'+(columnCount+1)+'">';
+	                    headerHTML += '<img src="images/ui/profile-'+socialSource+'.png" />';
+	                    headerHTML += '<div>';
+	                        headerHTML += '';
+	                        headerHTML += '';
+	                        headerHTML += '<a href="#" class="close" name="'+socialSource+'-'+(columnCount+1)+'">X</a>';
+	                    headerHTML += '</div>';
+	                headerHTML += '</div>';
+	                jQuery('.up-nav-bar .profiles .wrapper').append(headerHTML);
+	                jQuery('.up-nav-bar .profiles .wrapper div').show();
+	
+	                var columnHTML = '';
+	                columnHTML += '<div class="profile-content" id="hyves-'+(columnCount+1)+'">';
+	                    columnHTML += '<form name="persona">';
+	                        columnHTML += '<div class="profielfotos-wrapper"><input type="text" value="empty" /></div>';
+	                        columnHTML += '<input type="text" value="empty" label="voornaam" />';
+	                        columnHTML += '<input type="text" value="empty" label = "tussenvoegsel" />';
+	                        columnHTML += '<input type="text" value="empty" label="achternaam" />';
+	                        columnHTML += '<input type="text" value="empty" label="nickname" />';
+	                        columnHTML += '<input type="text" value="empty" label="weergave-naam" />';
+	                        columnHTML += '<input type="text" value="empty" label="geboortedatum" />';
+	                        columnHTML += '<input type="text" value="x" label="geboorteplaats" />';
+	                        columnHTML += '<input type="text" value="empty" label="nationaliteit" />';
+	                        columnHTML += '<input type="text" value="empty" label="geslacht" />';
+	                        columnHTML += '<input type="text" value="Nederlands" label="moedertaal" />';
+	                        columnHTML += '<input type="text" value="empty" label="straatnaam" />';
+	                        columnHTML += '<input type="text" value="empty" label="huisnummer" />';
+	                        columnHTML += '<input type="text" value="x" label="postcode" />';
+	                        columnHTML += '<input type="text" value="x" label="woonplaats" />';
+	                        columnHTML += '<input type="text" value="Nederland" label="land" />';
+	                        columnHTML += '<input type="text" value="empty" label="land" />';
+	                        columnHTML += '<input type="text" value="empty" label="woonsituatie" />';
+	                        columnHTML += '<input type="text" value="empty" label="relatie-status" />';
+	                        columnHTML += '<input type="text" value="empty" label="telefoonnummer" />';
+	                        columnHTML += '<input type="text" value="empty" label="mobiele nummer" />';
+	                        columnHTML += '<input type="text" value="empty" label="email-primair" />';
+	                        columnHTML += '<input type="text" value="empty" label="emailadressen" />';
+	                        columnHTML += '<input type="text" value="empty" label="biografie" />';
+	                        columnHTML += '<input type="text" value="empty" label="over-mij" />';
+	                        columnHTML += '<input type="text" value="empty" label="website" />';
+	                        columnHTML += '<input type="text" value="empty" label="saldotegoed" />';
+	                        columnHTML += '<input type="text" value="30 maart 2011" label="creatie-datum" />';
+	                    columnHTML += '</form>';
+	                columnHTML += '</div>';
+	                jQuery('div.inner div.profile-content-wrapper').append(columnHTML);
+	                setSizes();
+	            });
+	            jQuery('div.profiles a.close').click(function(){
+	                var what = jQuery(this).attr('name');
+	                var sure = confirm('Weet je zeker dat je deze profielkolom wilt verwijderen?');
+	                if(sure){
+	                    jQuery('div.profiles div.'+what).animate({width:'toggle'},150,function(){
+	                        jQuery('div.profiles div.'+what).remove();
+	                    });
+	                    jQuery('div.content div.profile-content-wrapper div#'+what).animate({width:'toggle'},150,function(){
+	                        jQuery('div.content div.profile-content-wrapper div#'+what).remove();
+	                    });
+	                }
+	                setSizes();
+	            });
+	            function showContent(what){
+	                jQuery('#content-wrapper .content .start').hide();
+	                jQuery('div.sub-cats, div.inner, div.profiles, div.add-profile').show();
+	                jQuery('.up-nav-bar .profiles .wrapper div, .up-nav-bar .profiles .wrapper, .up-nav-bar .profiles').show();
+	                jQuery('div.pos').show();
+	                switch(what){
+	                    case 'persona':
+	                        jQuery('div.sub-cats ul').hide();
+	                        jQuery('div.profile-content-wrapper').hide().find('form').hide();
+	                        jQuery('ul.persona').show();
+	                        jQuery('div.profile-content-wrapper').show().find('form[name="persona"]').show();
+	                        // set the height of vrienden sub-cat column
+	                        var subCatProfielfotosHeight = 0;
+	                        jQuery('form div.profielfotos-wrapper').each(
+	                            function(){
+	                                var height = jQuery(this).height();
+	                                if(height > subCatProfielfotosHeight){
+	                                    subCatProfielfotosHeight = height;
+	                                }
+	                            }
+	                        );
+	                        jQuery('.content div.sub-cats ul.persona li[name="profielfotos"]').css({ height: subCatProfielfotosHeight-6+'px' });
+	                        jQuery('.content div.profile-content-wrapper form div.profielfotos-wrapper').css({ height: subCatProfielfotosHeight+1+'px' });
+	                        // set the height of other mails sub-cat column
+	                        var subCatOtherMailHeight = 0;
+	                        jQuery('form div.other-mail-wrapper').each(
+	                            function(){
+	                                var height = jQuery(this).height();
+	                                if(height > subCatOtherMailHeight){
+	                                    subCatOtherMailHeight = height;
+	                                }
+	                            }
+	                        );
+	                        jQuery('.content div.sub-cats ul.persona li[name="other-mail"]').css({ height: subCatOtherMailHeight-2+'px' });
+	                        jQuery('.content div.profile-content-wrapper form div.other-mail-wrapper').css({ height: subCatOtherMailHeight+1+'px' });
+	
+	                    break;
+	                    case 'vrienden':
+	                        jQuery('div.sub-cats ul').hide();
+	                        jQuery('div.profile-content-wrapper').hide().find('form').hide();
+	                        jQuery('ul.vrienden').show();
+	                        jQuery('div.profile-content-wrapper').show().find('form[name="vrienden"]').show();
+	                        // set the height of vrienden sub-cat column
+	                        var subCatVriendenHeight = 0;
+	                        jQuery('form div.vrienden-wrapper').each(
+	                            function(){
+	                                var height = jQuery(this).height();
+	                                if(height > subCatVriendenHeight){
+	                                    subCatVriendenHeight = height;
+	                                }
+	                            }
+	                        );
+	                        jQuery('.content div.sub-cats ul.vrienden li[name="vrienden"]').css({ height: subCatVriendenHeight-2+'px' });
+	                        jQuery('.content div.profile-content-wrapper form div.vrienden-wrapper').css({ height: subCatVriendenHeight+1+'px' });
+	                    break;
+	                    case 'interesses':
+	                        jQuery('div.sub-cats ul').hide();
+	                        jQuery('div.profile-content-wrapper').hide().find('form').hide();
+	                        jQuery('ul.interesses').show();
+	                        jQuery('div.profile-content-wrapper').show().find('form[name="interesses"]').show();
+	                            // set the height of boeken sub-cat column
+	                            var subCatBoekenHeight = 0;
+	                            jQuery('form div.boeken-wrapper').each(
+	                                function(){
+	                                    var height = jQuery(this).height();
+	                                    if(height > subCatBoekenHeight){
+	                                        subCatBoekenHeight = height;
+	                                    }
+	                                }
+	                            );
+	                            jQuery('.content div.sub-cats ul.interesses li[name="boeken"]').css({ height: subCatBoekenHeight-2+'px' });
+	                            jQuery('.content div.profile-content-wrapper form div.boeken-wrapper').css({ height: subCatBoekenHeight+1+'px' });
+	                            // set the height of reizen sub-cat column
+	                            var subCatReizenHeight = 0;
+	                            jQuery('form div.reizen-wrapper').each(
+	                                function(){
+	                                    var height = jQuery(this).height();
+	                                    if(height > subCatReizenHeight){
+	                                        subCatReizenHeight = height;
+	                                    }
+	                                }
+	                            );
+	                            jQuery('.content div.sub-cats ul.interesses li[name="reizen"]').css({ height: subCatReizenHeight-2+'px' });
+	                            jQuery('.content div.profile-content-wrapper form div.reizen-wrapper').css({ height: subCatReizenHeight+1+'px' });
+	                    break;
+	                    case 'kennis':
+	                        jQuery('div.sub-cats ul').hide();
+	                        jQuery('div.profile-content-wrapper').hide().find('form').hide();
+	                        jQuery('ul.kennis').show();
+	                        jQuery('div.profile-content-wrapper').show().find('form[name="kennis"]').show();
+	                    break;
+	                    case 'databox':
+	                        jQuery('div.sub-cats ul').hide();
+	                        jQuery('div.profile-content-wrapper').hide().find('form').hide();
+	                        jQuery('ul.databox').show();
+	                        jQuery('div.profile-content-wrapper').show().find('form[name="databox"]').show();
+	                    break;
+	                    default:
+	
+	                    break;
+	                }
+	            }
+	            // div position with mouse
+	            jQuery('div.content div.inner').mousemove(function(e){
+	                jQuery('div.pos').css({
+	                    top: (e.pageY-65)+'px',
+	                    left: '8px',
+	                    width: (jQuery('div.sub-cats').width())+'px'
+	                });
+	            });
+	            jQuery('div.profile-content input').click(function(){
+	                this.select();
+	                jQuery(this).css('color','#000000');
+	            }).focusout(function(){
+	                if(jQuery(this).val() == 'empty'){
+	                    jQuery(this).css('color','#CCCCCC');
+	                }
+	            });
+	        });
+	    </script>	
+	</body>
+</html>
