@@ -1,0 +1,26 @@
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.vrienden-wrapper div.person{
+    display: block;
+    float:left;
+    width:72px;
+    height: 95px;
+}
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.vrienden-wrapper div.person:hover{
+    background: #FFFFFF;
+}
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.vrienden-wrapper div.person img{
+    display: block;
+    margin:4px auto 0 auto;
+}
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.vrienden-wrapper div.person div{
+    background: none;
+    border: 0;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.vrienden-wrapper div.person span:hover{
+    border: 0;
+    background: none;
+    color: #000;
+}

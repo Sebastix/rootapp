@@ -1,0 +1,12 @@
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.vrienden-wrapper,
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.profielfotos-wrapper,
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.boeken-wrapper,
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div.reizen-wrapper
+{
+    display:block;
+    margin:0;
+}
+#content-wrapper .content .inner .profile-content-wrapper .profile-content form div div.more
+{
+    margin:0px 4px;
+}
